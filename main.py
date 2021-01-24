@@ -26,6 +26,19 @@ __status__ = "Development"
 BACKGROUND_POSITION = (0, 0)
 
 
+def start_game():
+    pass
+
+
+def play_game():
+    pass
+
+
+def main():
+    start_game()
+    play_game()
+
+
 def except_hook(cls, exception, traceback):
     sys.__excepthook__(cls, exception, traceback)
 
@@ -50,17 +63,4 @@ if __name__ == '__main__':
     background_image = pygame.transform.scale(background_image, size)
     screen.blit(background_image, BACKGROUND_POSITION)
 
-    # формирование кадра:
-    # команды рисования на холсте
-    # ...
-    # ...
-
-    # смена (отрисовка) кадра:
-    pygame.display.flip()
-
-    # ожидание закрытия окна:
-    while pygame.event.wait().type != pygame.QUIT:
-        pass
-
-    # завершение работы:
-    pygame.quit()
+    main()
