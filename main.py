@@ -173,11 +173,13 @@ def start_screen():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit(0)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_c:
                     intro = False
                 elif event.key == pygame.K_q:
                     pygame.quit()
+                    sys.exit(0)
 
         show_message('Tanks. Shoot-out',
                      pygame.Color('white'), -175, size='large')
@@ -185,11 +187,11 @@ def start_screen():
                      pygame.Color('white'), -90)
 
         create_button('Играть', 200, 515, 150, 50,
-                      BLACK, GREEN, action="play")
+                      BLACK, GREEN, action='play')
         create_button('Управление', 400, 515, 200, 50,
-                      BLACK, YELLOW, action="controls")
+                      BLACK, YELLOW, action='controls')
         create_button('Выйти', 650, 515, 150, 50,
-                      BLACK, RED, action="quit")
+                      BLACK, RED, action='quit')
 
         # смена (отрисовка) кадра:
         pygame.display.flip()
@@ -204,6 +206,7 @@ def game_controls():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit(0)
 
         show_message('Управление:', WHITE, -175, size='large')
         show_message('Выстрел: [пробел]', WHITE, -90)
@@ -240,11 +243,13 @@ def pause():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
+                sys.exit(0)
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_c:
                     paused = False
                 elif event.key == pygame.K_q:
                     pygame.quit()
+                    sys.exit(0)
         clock.tick(FPS)
 
 
